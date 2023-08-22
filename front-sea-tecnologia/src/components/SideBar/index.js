@@ -6,12 +6,12 @@ export default function SideBar(){
     return(
         <WSideBar>
             <WhiteBlock/>
-            <SideButton icon="icons/itemLogo.svg"/>
-            <SideButton icon="icons/newEmployeeLogo.svg"/>
-            <SideButton icon="icons/infoLogo.svg"/>
-            <SideButton icon="icons/notificationLogo.svg"/>
-            <SideButton icon="icons/updateLogo.svg"/>
-            <SideButton icon="icons/profileLogo.svg"/>
+            <SideButton icon="icons/itemIcon.svg"/>
+            <SideButton icon="icons/newEmployeeIcon.svg"/>
+            <SideButton icon="icons/infoIcon.svg"/>
+            <SideButton icon="icons/notificationIcon.svg"/>
+            <SideButton icon="icons/updateIcon.svg"/>
+            <SideButton icon="icons/profileIcon.svg"/>
         </WSideBar>
     )
 }
