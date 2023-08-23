@@ -1,5 +1,4 @@
 import { w } from "windstitch"
-import ProgressStage from "./progressStage"
 import StageContainer from "./stageContainer"
 
 export default function ProgressBar(props) {
@@ -20,8 +19,8 @@ export default function ProgressBar(props) {
 }
 
 const WImageContainer = w.div`
-   p-10 h-40 flex justify-center items-center m-10 bg-white rounded-custom absolute
+    h-40 flex justify-center items-center m-10 bg-white rounded-custom  w-[1248px] absolute shadow-custom1
 `
 const WProgressBar = w.div`
-    flex justify-center items-start
+    flex justify-center items-start 
 `

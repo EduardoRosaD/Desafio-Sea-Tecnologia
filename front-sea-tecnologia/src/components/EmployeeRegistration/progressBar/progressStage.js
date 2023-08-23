@@ -15,11 +15,12 @@ export default function ProgressStage(props) {
 }
 
 const WProgressStage = w.div`
-        flex flex-col items-center justify-center ml-1 
+    flex flex-col items-center justify-center ml-1 
         `
 
 const ImageContainer = w.div`
-      bg-primaryBlue h-15 z-10 p-4 rounded-custom mt-20 shadow-custom`
+    bg-primaryBlue h-15 z-10 p-4 rounded-custom mt-20 shadow-custom`
 
 const ProgressStageText = w.span`
-      family-ubuntu text-primaryBlue font-normal s-14 mt-1 z-10 `
+    family-ubuntu text-primaryBlue font-normal mt-1 z-10 
+    `

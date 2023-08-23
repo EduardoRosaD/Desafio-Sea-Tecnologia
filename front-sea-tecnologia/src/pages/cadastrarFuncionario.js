@@ -1,5 +1,5 @@
 import SideBar from '../components/SideBar'
-import ProgressBar from '../components/EmployeeRegistration/progressBar'
+import EmployeeRegistration from '@/components/EmployeeRegistration'
 import { w } from "windstitch"
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
     <WMain>
       <SideBar />
       <WContent>
-      <ProgressBar />
+      <EmployeeRegistration />
       </WContent>
     </WMain>
   )
