@@ -24,6 +24,7 @@ export default function AddEmployeeModal() {
                 <RoleContainer />
                 <JobContainer />
                 <MedicalCertContainer />
+                <WSubmitButton>Salvar</WSubmitButton>
             </WForm>
 
         </WAddEmployeeModal>
@@ -48,4 +49,9 @@ family-ubuntu text-white  text-[28px]
 
 const WForm = w.form`
 flex flex-col items-center  bg-white  w-[100%] rounded-custom shadow-custom1
+`
+
+const WSubmitButton = w.button`
+flex items-center justify-center w-[100%] h-[36px]  rounded-[10px] 
+  text-[16px] rounded-[10px] border-primaryBlue border-[1px] mb-[26px] 
 `

@@ -41,7 +41,7 @@ const WText = w.p`
 
 const WSelectFileContainer = w.div`
     flex items-left justify-start gap-[11px] mt-[18px] h-[36px] relative justify-center border-[1px] 
-    border-primaryBlue rounded-[10px] cursor-pointer
+    border-primaryBlue rounded-[10px] cursor-pointer pt-[6px] 
 `
 
 const WSelectFileInput = w.input`
