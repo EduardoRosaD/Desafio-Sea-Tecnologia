@@ -14,7 +14,7 @@ export default function Home() {
 }
 
 const WMain = w.div`
- flex align-center justify-between
+ flex align-center justify-between bg-[#F2F2F2]
 `
 
 const WContent = w.div`

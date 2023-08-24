@@ -10,7 +10,7 @@ export default function FilterButtonsContainer(){
         <WFilterButtonsContainer>
             <FilterButton text="Ver apenas ativos" func={() => console.log("Todos")} />
             <FilterButton text="Limpar Filtros" func={() => console.log("Filtro limpo")} />
-            <WActiveCount>{employeesListState.filter((employee) => employee.ativo).length}/{employeesListState.length} ativos</WActiveCount>
+            <WActiveCount>{employeesListState.filter((employee) => employee.active).length}/{employeesListState.length} ativos</WActiveCount>
         </WFilterButtonsContainer>
     )
 }

@@ -1,17 +1,23 @@
 import { w } from "windstitch";
+import { EmployeeRegContext } from "../context/employeeRegContext";
+import { useContext } from "react";
 
-import EmployeeInfo from "./employeeInfoContainer";
+import EmployeeDescription from "./employeeDescription";
 import MainContainer from "./mainContainer";
+import AddEmployeeModal from "./addEmployeeModal";
 
 export default function MainContent(){
+    const { addEmployee } = useContext(EmployeeRegContext)
     return (
         <WMain>
-            <EmployeeInfo />
-            <MainContainer />
+            <EmployeeDescription/>
+           {
+                addEmployee ? <AddEmployeeModal/> : <MainContainer/>
+           }
         </WMain>
     )
 }
 
 const WMain = w.div`
-    flex  items-start gap-[34px]  shadow-custom1
+    flex  items-start gap-[34px]  bg-[#F2F2F2] 
 `

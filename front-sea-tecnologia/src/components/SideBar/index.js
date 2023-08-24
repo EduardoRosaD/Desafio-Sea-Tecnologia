@@ -17,6 +17,6 @@ export default function SideBar(){
 }
 
 const WSideBar = w.div`
-   bg-primaryBlue h-screen w-20 flex flex-col justify-center items-center gap-24 rounded-r-custom 
+   bg-primaryBlue h-[768px] w-[57px] flex flex-col justify-center items-center gap-[24px] rounded-r-custom 
 
 `

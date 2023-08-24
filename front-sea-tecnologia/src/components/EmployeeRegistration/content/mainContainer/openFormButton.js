@@ -1,8 +1,11 @@
 import { w } from "windstitch";
+import { EmployeeRegContext } from "../../context/employeeRegContext";
+import { useContext } from "react";
 
 export default function OpenFormButton(){
+    const { setAddEmployee } = useContext(EmployeeRegContext)
     return (
-        <WOpenFormButton>
+        <WOpenFormButton onClick={() => setAddEmployee(true)}>
         +Adicionar Funcionário 
         </WOpenFormButton>
     )

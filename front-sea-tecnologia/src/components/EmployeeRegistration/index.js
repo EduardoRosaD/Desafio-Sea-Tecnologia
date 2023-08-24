@@ -5,45 +5,66 @@ import { useState } from "react";
 import ProgressBar from "./progressBar";
 import MainContent from "./content";
 
-const  employeesList = [ {
+const employeesList = [{
     name: 'João',
-    ativo: false,
+    active: false,
     cpf: '123.456.789-10',
-    cargo: 'Desenvolvedor',
-    atividade: 'Desenvolvimento',
+    role: 'Desenvolvedor',
+    job: 'Desenvolvimento',
 },
 {
     name: 'Maria',
-    ativo: true,
+    active: true,
     cpf: '123.456.789-10',
-    cargo: 'Desenvolvedor',
-    atividade: 'Desenvolvimento',
+    role: 'Desenvolvedor',
+    job: 'Desenvolvimento',
 },
 {
     name: 'José',
-    ativo: true,
+    active: true,
     cpf: '123.456.789-10',
-    cargo: 'Desenvolvedor',
-    atividade: 'Desenvolvimento',
+    role: 'Desenvolvedor',
+    job: 'Desenvolvimento',
 }
 ]
 
 export default function EmployeeRegistration(props) {
     const [concluedText, setConcluedText] = useState('CONCLUIDO')
+    const [addEmployee, setAddEmployee] = useState(false)
     const [employeesListState, setEmployeesListState] = useState(employeesList)
+    const [employeeForm, setEmployeeForm] = useState({
+        name: '',
+        cpf: '',
+        role: '',
+        job: [],
+        active: false,
+        rg: '',
+        birthDate: '',
+        gender: '',
+    })
+
+    const handleEmployeeForm = (e) => {
+        e.preventDefault()
+        setEmployeeForm({ ...employeeForm, [e.target.name]: e.target.value })
+    }
 
 
     return (
-        <EmployeeRegContext.Provider value={{ 
-            concluedText, 
+        <EmployeeRegContext.Provider value={{
+            concluedText,
             setConcluedText,
-            employeesListState, 
-            setEmployeesListState }}>
+            addEmployee, 
+            setAddEmployee,
+            employeesListState,
+            setEmployeesListState,
+            employeeForm, 
+            setEmployeeForm,
+            handleEmployeeForm
+        }}>
 
             <WEmployeeRegistration>
                 <ProgressBar />
                 <MainContent />
-                <WButton>Próximo passo </WButton>
             </WEmployeeRegistration>
 
         </EmployeeRegContext.Provider>
@@ -51,9 +72,6 @@ export default function EmployeeRegistration(props) {
 }
 
 const WEmployeeRegistration = w.div`
-    flex flex-col items-center justify-center gap-[58px]
+    flex flex-col items-center justify-center gap-[58px] bg-[#F2F2F2]
 `
 
-const WButton = w.button`
-    family-roboto text-white text-[14px] font-[700] mr-[12px] rounded-[10px] bg-primaryBlue h-[32px] w-[194px] flex justify-center items-center  pr-[2px] absolute right-[288px] top-[730px]
-`

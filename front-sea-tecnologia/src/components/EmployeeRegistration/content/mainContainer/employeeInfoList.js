@@ -5,13 +5,17 @@ import { useContext } from "react";
 import EmployeeInfo from "./employeeInfo";
 
 
-export default function EmployeeInfoList(){
+export default function EmployeeInfoList() {
     const { employeesListState } = useContext(EmployeeRegContext)
-   return( <WEmployeeList>
-{employeesListState.map((employee) => (
-    <EmployeeInfo employee={employee} key={employee.cpf} />
-))}
-</WEmployeeList>
+
+    return (
+    <WEmployeeList>
+
+        {employeesListState.map((employee) => (
+            <EmployeeInfo employee={employee} key={employee.cpf} />
+        ))}
+        
+    </WEmployeeList>
     )
 }
 

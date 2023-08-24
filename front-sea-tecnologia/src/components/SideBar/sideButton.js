@@ -1,12 +1,22 @@
+import { w }  from "windstitch"
+
 
 
 export default function SideButton(props) {
     const selected = props.icon == "icons/newEmployeeIcon.svg"
     return (
-        <button class = {selected ? "border-l-custom border-white pl-5  mr-5" : ""}>
+        <WSideButton >
+            {selected ? <WSideBorder/> : null}
             <img src={props.icon} alt="logo" />
-        </button>
+        </WSideButton>
     )
 }
 
+const WSideButton = w.button`
+    h-[32px] w-[32px]
+`
+
+const WSideBorder = w.div`
+    h-[32px] w-[4px] bg-white absolute left-0 
+`
 

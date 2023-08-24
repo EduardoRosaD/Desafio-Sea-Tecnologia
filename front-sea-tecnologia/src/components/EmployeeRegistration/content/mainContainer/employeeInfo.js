@@ -5,8 +5,8 @@ export default function EmployeeInfo({employee}){
         <WEmployeeInfo>
             <WName>{employee.name}</WName>
             <WSpan>{employee.cpf}</WSpan>
-            <WSpan>{employee.cargo}</WSpan>
-            <WSpan>{employee.atividade}</WSpan>
+            <WSpan>{employee.role}</WSpan>
+            <WSpan>{employee.job}</WSpan>
             <WButton>
               <img src="images/treeDots.svg" alt="logo" />
             </WButton>
