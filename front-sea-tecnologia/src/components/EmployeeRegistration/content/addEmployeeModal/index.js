@@ -31,7 +31,7 @@ export default function AddEmployeeModal() {
 }
 
 const WAddEmployeeModal = w.div`
-flex   bg-white flex-col relative rounded-custom shadow-custom1  h-[100%] mb-[64px]
+flex   bg-white flex-col relative rounded-custom shadow-custom1  h-[100%] mb-[64px]  pl-[17px] pr-[17px]
 `
 
 const WHeaderContainer = w.div`

@@ -6,7 +6,7 @@ export default function ActivyContainer(){
     const { setEmployeeForm, employeeForm } = useContext(EmployeeRegContext)
     const handleActivity = (e) => {
         e.preventDefault()
-        setEmployeeForm({...employeeForm,  activity:  !employeeForm.activity})
+        setEmployeeForm({...employeeForm,  active: !employeeForm.activity})
     }
     return (
         <WActivyContainer>
@@ -25,7 +25,8 @@ export default function ActivyContainer(){
 
 
 const WActivyContainer = w.div`
-    flex  items-center justify-between w-[702px] h-[67px] bg-white rounded-[10px] border-primaryBlue border-[1px] pl-[11px] pr-[12px] pt-[9px] pb-[15px] mt-[70px] mb-[27px]
+    flex  items-center justify-between w-[702px] h-[67px] bg-white pl-[11px] pr-[12px] pt-[9px] 
+    pb-[15px] mt-[70px] mb-[27px] rounded-[10px] border-primaryBlue border-[1px]
 `
 
 const WText = w.p`

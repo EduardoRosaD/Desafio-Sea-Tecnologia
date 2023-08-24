@@ -11,6 +11,7 @@ export default function CheckBox(props){
         e.preventDefault()
         setEmployeeForm({...employeeForm,gender: props.name})
         props.setChecked(props.name)
+        console.log(employeeForm)
 }
     return(
         <WCheckBox>
