@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import AddJob from "./addJob";
 
 export default function AddJobContainer(){
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
+    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
     const [ jobsList, setJobsList ] = useState([ 0,])
 
      function handleJobsList(e){

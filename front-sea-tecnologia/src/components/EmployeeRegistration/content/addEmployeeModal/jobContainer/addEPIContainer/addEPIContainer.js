@@ -4,13 +4,18 @@ import { useContext, useState } from "react";
 
 import AddEPI from "./addEPI";
 
-export default function addEPIContainer(){
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
+export default function addEPIContainer({index}){
+    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
     const [ EPIList, setEPIList ] = useState([ 0])
 
     const handleAddEPI = (e) => {
         e.preventDefault()
-        setEPIList([...EPIList, EPIList.length])
+        console.log(EPIList)
+        setEPIList([...EPIList, 1])
+        let  localEPIs = [...employeeForm.EPIs]
+        localEPIs.push({name: '', CA: ''})
+        localEPIs[index].CA = e.target.value
+        setEmployeeForm({ ...employeeForm, EPIs: localEPIs })
     }
 
     return (

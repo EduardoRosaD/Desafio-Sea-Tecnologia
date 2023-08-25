@@ -8,27 +8,27 @@ export default function LeftContainer() {
     const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
     return (
         <WLeftContainer>
-            <InputContainer props={{
-                label: 'Nome',
-                onChange: handleEmployeeForm,
-                value: employeeForm.name,
-                type: 'text',  
-                name: 'role'
-            }} />
-            <InputContainer props={{
-                label: 'CPF',
-                onChange: handleEmployeeForm,
-                value: employeeForm.cpf,
-                type: 'text',
-                name: 'cpf'
-            }} />
-            <InputContainer props={{
-                label: 'RG',
-                onChange: handleEmployeeForm,
-                value: employeeForm.rg,
-                type: 'text',
-                name: 'rg'
-            }} />
+            <InputContainer 
+                label= 'Nome'
+                onChange = {handleEmployeeForm}
+                value = {employeeForm.name}
+                type= 'text'  
+                name= 'name'
+             />
+            <InputContainer 
+                label= 'CPF'
+                onChange = {handleEmployeeForm}
+                value = {employeeForm.cpf}
+                type= 'text'
+                name= 'cpf'
+             />
+            <InputContainer 
+                label= 'RG'
+                onChange = {handleEmployeeForm}
+                value = {employeeForm.rg}
+                type= 'text'
+                name= 'rg'
+             />
         </WLeftContainer>
     )
 }

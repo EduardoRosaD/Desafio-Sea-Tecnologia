@@ -6,14 +6,21 @@ import { useState } from "react";
 import CheckBox from './checkBox';
 
 export default function GenderInputContainer({ props }) {
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
+    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
     const [checked, setChecked] = useState('')
+
+    const handleGender = (e) => {
+        e.preventDefault()
+        setChecked('')
+        setEmployeeForm({ ...employeeForm, [e.target.name]: e.target.value })
+    }
+
     return(
         <WGenderInputContainer>
             <WLabel>Sexo</WLabel>
             <WCheckContainer>
-            <CheckBox name={"Masculino"} checked={checked} setChecked={setChecked}> </CheckBox>
-            <CheckBox name={"Feminino"} checked={checked}  setChecked={setChecked}> </CheckBox>
+            <CheckBox name={"Masculino"} checked={checked} value ={"Masculino"} setChecked={setChecked}> </CheckBox>
+            <CheckBox name={"Feminino"} checked={checked} value={"Feminino"}  setChecked={setChecked}> </CheckBox>
             </WCheckContainer>
         </WGenderInputContainer>
     )

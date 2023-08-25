@@ -3,8 +3,15 @@ import { EmployeeRegContext } from "../../../context/employeeRegContext";
 import { useContext, useState } from "react";
 
 export default function MedicalCert() {
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
+    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
     const [ medicalCert, setMedicalCert ] = useState("")
+
+    const handleMedicalCert = (e) => {
+        e.preventDefault()
+        setMedicalCert(e.target.value)
+        setEmployeeForm({ ...employeeForm, [e.target.name]: e.target.value })
+    }
+
     return (
         <WMedicalCertContainer>
             <WTitle>Adicione Atestado de Saúde Ocupacional (opcional):</WTitle>
@@ -13,7 +20,7 @@ export default function MedicalCert() {
             </WMedicalCert>
             <WSelectFileContainer>
                 <label htmlFor="file" >Selecione o Arquivo</label>
-                <WSelectFileInput type="file" onChange={(e)=> setMedicalCert(e.target.value)} id="file" name="file" />
+                <WSelectFileInput type="file" onChange={(e)=> handleMedicalCert(e)} id="file" name="file" />
             </WSelectFileContainer>
 
         </WMedicalCertContainer>

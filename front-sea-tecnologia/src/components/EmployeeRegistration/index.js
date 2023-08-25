@@ -37,14 +37,20 @@ export default function EmployeeRegistration(props) {
         cpf: '',
         role: '',
         job: [],
+        EPIs: [{
+            name: '',
+            CA: '',
+        }],
         active: false,
         rg: '',
         birthDate: '',
         gender: '',
+        medicalCert: '',
     })
 
     const handleEmployeeForm = (e) => {
         e.preventDefault()
+        console.log(employeeForm)
         setEmployeeForm({ ...employeeForm, [e.target.name]: e.target.value })
     }
 

@@ -1,10 +1,11 @@
 import { w } from "windstitch";
 
-export default function InputContainer({ props }) {
+export default function InputContainer(props) {
     return (
         <WInputContainer>
             <WLabel>{props.label}</WLabel>
-            <WInput onChange={props.onChange} value={props.value} type={props.type} placeholder={props.placeholder} />
+            <WInput onChange={(e)=>props.onChange(e)} value={props.value} name={props.name}
+            type={props.type} placeholder={props.placeholder} />
         </WInputContainer>
     )
 }

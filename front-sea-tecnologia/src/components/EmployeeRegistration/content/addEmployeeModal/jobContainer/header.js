@@ -3,6 +3,7 @@ import { EmployeeRegContext } from "../../../context/employeeRegContext";
 import { useContext, useState } from "react";
 
 export default function Header() {
+    const [ employeeEPI, setEmployeeEPI ] = useState(false)
     return (
         <WHeaderContainer>
             <WTitle>Quais EPIs o trabalhador usa na atividade?</WTitle>

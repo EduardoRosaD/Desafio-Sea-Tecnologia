@@ -4,12 +4,20 @@ import { useContext, useState } from "react";
 
 import SelectEPIINPUT from "./selectEPI";
 
-export default function AddEPI({handleAddEPI}) {
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
+export default function AddEPI({handleAddEPI,index}) {
+    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
+
+    const handleEmployeeForm = (e) => {
+        e.preventDefault()
+        console.log(index, employeeForm)
+        let  localEPIs = [...employeeForm.EPIs]
+        localEPIs[index].CA = e.target.value
+        setEmployeeForm({ ...employeeForm, EPIs: localEPIs })
+    }
    
     return (
         <WAddEPI>
-           <SelectEPIINPUT/>
+           <SelectEPIINPUT index={index}/>
            <WInputContainer>
             <WLabel>Informe o número do CA:</WLabel>
             <WInput onChange={handleEmployeeForm}/>

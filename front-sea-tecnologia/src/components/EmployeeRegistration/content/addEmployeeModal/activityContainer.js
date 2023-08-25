@@ -6,12 +6,13 @@ export default function ActivyContainer(){
     const { setEmployeeForm, employeeForm } = useContext(EmployeeRegContext)
     const handleActivity = (e) => {
         e.preventDefault()
-        setEmployeeForm({...employeeForm,  active: !employeeForm.activity})
+        console.log(employeeForm)
+        setEmployeeForm({...employeeForm,  active: !employeeForm.active})
     }
     return (
         <WActivyContainer>
             <WText>O trabalhador está ativo ou inativo? </WText>
-            {employeeForm.activity?
+            {employeeForm.active?
                 <>
                     <WButton onClick={(e) => handleActivity(e)}>Ativo <img src="images/blueBall.svg"></img> </WButton>
                    

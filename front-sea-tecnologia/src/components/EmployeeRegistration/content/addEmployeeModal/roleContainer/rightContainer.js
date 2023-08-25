@@ -11,13 +11,13 @@ export default function RightContainer(){
     return (
         <WRightContainer>
             <GenderInputContainer/>
-            <InputContainer props={{
-                label: 'Data de nascimento',
-                onChange: handleEmployeeForm,
-                value: employeeForm.birthDate,
-                type: 'text',
-                name: 'birthDate'
-            }} />
+            <InputContainer 
+                label = 'Data de nascimento'
+                onChange = {handleEmployeeForm}
+                value = {employeeForm.birthDate}
+                type = 'text'
+                name = 'birthDate'
+            />
             <SelectRoleInput/>
         </WRightContainer>
     )

@@ -2,15 +2,25 @@ import { w } from "windstitch";
 import { EmployeeRegContext } from "../../../../context/employeeRegContext"
 import { useContext, useState } from "react";
 
-export default function SelectEPIINPUT() {
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
+export default function SelectEPIINPUT({index}) {
+    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
     const [EPIsList, setEPIsList] = useState(['Calçado de Segurança', 'Capacete de Segurança',
         'Cinto de Segurança', 'Luvas de Segurança', 'Máscara de Segurança', 'Óculos de Segurança',
         'Protetor Auricular', 'Protetor Facial', 'Protetor Respiratório', 'Vestimenta de Segurança', 'Outros'])
+       
+
+        const handleEPI= (e) => {
+            e.preventDefault()
+            console.log(employeeForm)
+            let localEPI= [...employeeForm.EPIs]
+            localEPI[index].name = e.target.value
+                setEmployeeForm({ ...employeeForm, EPIs: localEPI })
+        }
+        
     return (
         <WSelectEPIInput>
             <WLabel>Selecione o EPI:</WLabel>
-            <WSelectInput onChange={handleEmployeeForm} value={employeeForm.EPI} name="EPI">
+            <WSelectInput onChange={handleEPI} value={employeeForm.EPI} name="EPI">
                 <option value="" disabled selected></option>
                 {EPIsList.map((EPI, index) => {
                     return <option key={index} value={EPI}>{EPI}</option>

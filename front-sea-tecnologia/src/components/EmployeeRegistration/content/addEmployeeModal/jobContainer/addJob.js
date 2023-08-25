@@ -4,22 +4,32 @@ import { useContext, useState } from "react";
 
 import AddEPIContainer from "./addEPIContainer/addEPIContainer";
 
-export default function AddJobContainer(){
-    const { employeeForm, handleEmployeeForm } = useContext(EmployeeRegContext)
-    const jobsList = [ "Ativ. 1", "Ativ. 2", "Ativ. 3", "Ativ. 4", "Ativ. 5", "Ativ. 6", "Ativ. 7", "Ativ. 8", ]
-   
+export default function AddJobContainer({ index }) {
+    const { employeeForm, handleEmployeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
+    const [selectedJob, setSelectedJob] = useState(false)
+    const jobsList = ["Ativ. 1", "Ativ. 2", "Ativ. 3", "Ativ. 4", "Ativ. 5", "Ativ. 6", "Ativ. 7", "Ativ. 8",]
+
+    const handleJob = (e) => {
+        e.preventDefault()
+        console.log(employeeForm)
+        let localJob = [...employeeForm.job]
+        localJob[index] = e.target.value
+        setEmployeeForm({ ...employeeForm, job: localJob })
+
+    }
+
     return (
         <WJobContainer>
             <WLabel>Selecione a atividade:</WLabel>
-             <WSelectContainer>
-                <WSelectInput onChange={handleEmployeeForm} value={employeeForm.job} name="job">
+            <WSelectContainer>
+                <WSelectInput onChange={(e) => handleJob(e)} name="job">
                     <option value="" disabled selected>Selecione a atividade</option>
                     {jobsList.map((job, index) => (
                         <option key={index} value={job}>{job}</option>
                     ))}
                 </WSelectInput>
             </WSelectContainer>
-            <AddEPIContainer/>
+            <AddEPIContainer index={index} />
         </WJobContainer>
     )
 }
