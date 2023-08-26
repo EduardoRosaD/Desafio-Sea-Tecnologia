@@ -31,6 +31,7 @@ const employeesList = [{
 export default function EmployeeRegistration(props) {
     const [concluedText, setConcluedText] = useState('CONCLUIDO')
     const [addEmployee, setAddEmployee] = useState(false)
+    const [totalEPIs, setTotalEPIs] = useState([])
     const [employeesListState, setEmployeesListState] = useState(employeesList)
     const [employeeForm, setEmployeeForm] = useState({
         name: '',
@@ -39,7 +40,7 @@ export default function EmployeeRegistration(props) {
         job: [],
         EPIs: [{
             name: '',
-            CA: '',
+            CA: '',  
         }],
         active: false,
         rg: '',
@@ -65,7 +66,9 @@ export default function EmployeeRegistration(props) {
             setEmployeesListState,
             employeeForm, 
             setEmployeeForm,
-            handleEmployeeForm
+            handleEmployeeForm,
+            totalEPIs, 
+            setTotalEPIs
         }}>
 
             <WEmployeeRegistration>

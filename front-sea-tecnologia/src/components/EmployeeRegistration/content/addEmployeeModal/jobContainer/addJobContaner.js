@@ -4,21 +4,29 @@ import { useContext, useState } from "react";
 
 import AddJob from "./addJob";
 
-export default function AddJobContainer(){
-    const { employeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
-    const [ jobsList, setJobsList ] = useState([ 0,])
+export default function AddJobContainer() {
+    const { employeeForm, setEmployeeForm, totalEPIs, setTotalEPIs } = useContext(EmployeeRegContext)
+    const [jobsList, setJobsList] = useState([0,])
 
-     function handleJobsList(e){
+
+
+    function handleJobsList(e) {
         e.preventDefault()
+
+        let localEPIs = [...employeeForm.EPIs]
+        localEPIs.push({ name: '', CA: '' })
+        setEmployeeForm({ ...employeeForm, EPIs: localEPIs })
+        setTotalEPIs([...totalEPIs, 1])
         setJobsList([...jobsList, jobsList.length])
+
     }
 
     return (
         <WJobContainer>
             {jobsList.map((job, index) => (
-                <AddJob key={index} index={index}/>
+                <AddJob key={index} index={index} />
             ))}
-          <WNewJobButton onClick={(e) => handleJobsList(e)}>Adicionar nova atividade</WNewJobButton>
+            <WNewJobButton onClick={(e) => handleJobsList(e)}>Adicionar nova atividade</WNewJobButton>
 
         </WJobContainer>
     )
