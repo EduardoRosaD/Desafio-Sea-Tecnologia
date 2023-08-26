@@ -8,8 +8,8 @@ export default function FilterButtonsContainer(){
     const { employeesListState } = useContext(EmployeeRegContext)
     return (
         <WFilterButtonsContainer>
-            <FilterButton text="Ver apenas ativos" func={() => console.log("Todos")} />
-            <FilterButton text="Limpar Filtros" func={() => console.log("Filtro limpo")} />
+            <FilterButton text="Ver apenas ativos" filterType="active" />
+            <FilterButton text="Limpar Filtros"  filterType="unactive" />
             <WActiveCount>{employeesListState.filter((employee) => employee.active).length}/{employeesListState.length} ativos</WActiveCount>
         </WFilterButtonsContainer>
     )

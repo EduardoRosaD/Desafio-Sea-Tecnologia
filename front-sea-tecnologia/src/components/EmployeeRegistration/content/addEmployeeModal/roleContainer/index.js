@@ -14,7 +14,7 @@ export default function RoleContainer(){
 
 
 const WRoleContainer = w.div`
-    flex  items-center  w-[702px] bg-white h-[255px] border-primaryBlue border-[1px] pr-[8px] rounded-[10px]
+    flex shadow-custom2  items-center  w-[702px] bg-white h-[255px] border-primaryBlue border-[1px] pr-[8px] rounded-[10px]
 ` 
 
 const WTitle = w.h1`

@@ -6,9 +6,10 @@ import ActivyContainer from "./activityContainer";
 import RoleContainer from "./roleContainer";
 import MedicalCertContainer from "./medicalCertContainer";
 import JobContainer from "./jobContainer";
+import { employeeRegister, getEmployees } from "../../actions";
 
 export default function AddEmployeeModal() {
-    const { setAddEmployee } = useContext(EmployeeRegContext)
+    const { setAddEmployee, employeeForm } = useContext(EmployeeRegContext)
 
     return (
         <WAddEmployeeModal>
@@ -19,12 +20,12 @@ export default function AddEmployeeModal() {
             </WButton>
            <WHeader>Adicionar Funcionário</WHeader>
             </WHeaderContainer>
-            <WForm>
+            <WForm onSubmit={(e) => employeeRegister(e,employeeForm)}>
                 <ActivyContainer />
                 <RoleContainer />
                 <JobContainer />
                 <MedicalCertContainer />
-                <WSubmitButton>Salvar</WSubmitButton>
+                <WSubmitButton type="submit">Salvar</WSubmitButton>
             </WForm>
 
         </WAddEmployeeModal>
@@ -32,7 +33,7 @@ export default function AddEmployeeModal() {
 }
 
 const WAddEmployeeModal = w.div`
-flex   bg-white flex-col relative rounded-custom shadow-custom1  h-[100%] mb-[64px]  pl-[17px] pr-[17px]
+flex shadow-custom1  bg-white flex-col relative rounded-custom shadow-custom1  h-[100%] mb-[64px]  pl-[17px] pr-[17px]
 `
 
 const WHeaderContainer = w.div`

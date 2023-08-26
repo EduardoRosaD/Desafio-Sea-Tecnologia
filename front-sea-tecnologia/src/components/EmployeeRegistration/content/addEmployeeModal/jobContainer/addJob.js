@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import AddEPIContainer from "./addEPIContainer/addEPIContainer";
 
 export default function AddJobContainer({ index }) {
-    const { employeeForm, handleEmployeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
+    const { needEPI, employeeForm, handleEmployeeForm, setEmployeeForm } = useContext(EmployeeRegContext)
     const jobsList = ["Ativ. 1", "Ativ. 2", "Ativ. 3", "Ativ. 4", "Ativ. 5", "Ativ. 6", "Ativ. 7", "Ativ. 8",]
 
     const handleJob = (e) => {
@@ -28,7 +28,7 @@ export default function AddJobContainer({ index }) {
                     ))}
                 </WSelectInput>
             </WSelectContainer>
-            <AddEPIContainer index={index} />
+            {needEPI && <AddEPIContainer index={index} />}
           
         </WJobContainer>
     )

@@ -22,6 +22,7 @@ export default function JobContainer(){
 
 const WJobContainer = w.div`
     flex flex-col items-left  bg-white  w-[702px] border-[1px] 
-    border-primaryBlue rounded-[10px] pl-[13px] mt-[26px]  pt-[13px] pr-[8px] pb-[14px]
+    border-primaryBlue rounded-[10px] pl-[13px] mt-[26px]  
+    pt-[13px] pr-[8px] pb-[14px]
 `
 

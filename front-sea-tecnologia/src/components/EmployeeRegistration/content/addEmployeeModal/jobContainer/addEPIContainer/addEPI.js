@@ -26,10 +26,7 @@ export default function AddEPI({handleAddEPI,pos}) {
             <WLabel>Informe o número do CA:</WLabel>
             <WInput onChange={handleEmployeeForm}/>
         </WInputContainer>
-            <WButton
-            type="button"
-            onClick={(e) => handleAddEPI(e)}
-            >Adicionar EPI</WButton>
+          <WButton onClick={handleAddEPI}>Adicionar EPI</WButton>
         </WAddEPI>
     )
 }

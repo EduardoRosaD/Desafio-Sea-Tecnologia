@@ -1,6 +1,7 @@
 import { w } from "windstitch";
 import { EmployeeRegContext } from "./context/employeeRegContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getEmployees } from "./actions";
 
 import ProgressBar from "./progressBar";
 import MainContent from "./content";
@@ -8,21 +9,28 @@ import MainContent from "./content";
 const employeesList = [{
     name: 'João',
     active: false,
-    cpf: '123.456.789-10',
+    cpf: '193.456.789-10',
     role: 'Desenvolvedor',
     job: 'Desenvolvimento',
 },
 {
     name: 'Maria',
     active: true,
-    cpf: '123.456.789-10',
+    cpf: '129.456.789-10',
     role: 'Desenvolvedor',
     job: 'Desenvolvimento',
 },
 {
     name: 'José',
     active: true,
-    cpf: '123.456.789-10',
+    cpf: '128.456.789-10',
+    role: 'Desenvolvedor',
+    job: 'Desenvolvimento',
+},
+{
+    name: 'João',
+    active: false,
+    cpf: '126.456.789-10',
     role: 'Desenvolvedor',
     job: 'Desenvolvimento',
 }
@@ -32,6 +40,7 @@ export default function EmployeeRegistration(props) {
     const [concluedText, setConcluedText] = useState('CONCLUIDO')
     const [addEmployee, setAddEmployee] = useState(false)
     const [totalEPIs, setTotalEPIs] = useState([])
+    const [ needEPI, setNeedEPI ] = useState(true)
     const [employeesListState, setEmployeesListState] = useState(employeesList)
     const [employeeForm, setEmployeeForm] = useState({
         name: '',
@@ -55,6 +64,10 @@ export default function EmployeeRegistration(props) {
         setEmployeeForm({ ...employeeForm, [e.target.name]: e.target.value })
     }
 
+    useEffect(() => {
+        getEmployees()
+    }, [])
+
 
     return (
         <EmployeeRegContext.Provider value={{
@@ -68,7 +81,10 @@ export default function EmployeeRegistration(props) {
             setEmployeeForm,
             handleEmployeeForm,
             totalEPIs, 
-            setTotalEPIs
+            setTotalEPIs,
+            needEPI, 
+            setNeedEPI,
+            employeesList
         }}>
 
             <WEmployeeRegistration>

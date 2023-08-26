@@ -1,11 +1,9 @@
-import axios from "axios";
-import { EmployeeRegContext } from "../context/employeeRegContext";
-import { useContext, useState } from "react";
+import api from "../../../config/server";
 
-export async function employeeRegister(employeeForm) {
+export async function employeeRegister(e,employeeForm) {
+    e.preventDefault()
    try {
-     console.log(employeeForm)
-     const response = await axios.post('http://localhost:3001/employees', employeeForm)
+     const response = await api.post("http://localhost:5000/funcionario", employeeForm)
      console.log(response)
    } catch (error) {
         console.log(error)
@@ -14,7 +12,7 @@ export async function employeeRegister(employeeForm) {
 
 export async function getEmployees() {
     try {
-      const response = await axios.get('http://localhost:3001/employees')
+      const response = await api.get("http://localhost:5000/funcionario")
       console.log(response)
     } catch (error) {
          console.log(error)

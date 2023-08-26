@@ -26,7 +26,8 @@ module.exports = {
     },
     boxShadow:{
       custom: '0px 4px 0px 0px rgba(0, 0, 0, 0.25);',
-      custom1:'0px 2px 23px 0px rgba(0, 0, 0, 0.05)'
+      custom1:'0px 2px 23px 0px rgba(0, 0, 0, 0.05)',
+      custom2:'0px 4px 4px 0px rgba(0, 0, 0, 0.25);'
     },
     fontFamily: {
       font1: ['Ubuntu', 'sans-serif'],

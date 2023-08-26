@@ -30,7 +30,8 @@ export default function MedicalCert() {
 
 const WMedicalCertContainer = w.div`
 w-[702px] border-[1px] 
-border-primaryBlue rounded-[10px] pl-[13px] mt-[26px]  pt-[13px] pr-[8px] pb-[14px] mb-[12px]
+border-primaryBlue rounded-[10px] pl-[13px] 
+mt-[26px]  pt-[13px] pr-[8px] pb-[14px] mb-[12px]
 `
 
 const WTitle = w.h1`

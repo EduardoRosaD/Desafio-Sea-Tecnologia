@@ -3,12 +3,12 @@ import { EmployeeRegContext } from "../../../context/employeeRegContext";
 import { useContext, useState } from "react";
 
 export default function Header() {
-    const [ employeeEPI, setEmployeeEPI ] = useState(false)
+    const {  needEPI, setNeedEPI } = useContext(EmployeeRegContext)
     return (
         <WHeaderContainer>
             <WTitle>Quais EPIs o trabalhador usa na atividade?</WTitle>
             <WCheckBoxContainer>
-                <WCheckBoxInput type="checkbox" onChange={() => setEmployeeEPI(!employeeEPI)} />
+                <WCheckBoxInput type="checkbox" onChange={() => setNeedEPI(!needEPI)} />
                 <WCheckBoxLabel>O trabalhador não usa EPI</WCheckBoxLabel>
             </WCheckBoxContainer>
 
