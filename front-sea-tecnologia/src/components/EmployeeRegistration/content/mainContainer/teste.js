@@ -1,7 +1,3 @@
-import SideButton from "./sideButton";
-import WhiteBlock from "./witheBlock";
-import { w } from "windstitch"
-
 export default function SideBar(){
     const iconsList = ["icons/itemIcon.svg", "icons/newEmployeeIcon.svg", "icons/infoIcon.svg", "icons/notificationIcon.svg", "icons/updateIcon.svg", "icons/profileIcon.svg"]
     return(
