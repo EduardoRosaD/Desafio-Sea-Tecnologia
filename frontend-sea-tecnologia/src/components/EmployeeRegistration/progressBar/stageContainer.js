@@ -2,6 +2,7 @@ import { w } from "windstitch"
 import ProgressStage from "./progressStage"
 import { EmployeeRegContext } from "../context/employeeRegContext.js"
 import { useContext } from "react"
+import Image from "next/image"
 
 export default function StageContainer(props) {
     const { concluedText } = useContext(EmployeeRegContext)
@@ -10,9 +11,9 @@ export default function StageContainer(props) {
     return (
         <WStageContainer>
             {itensList.map((item) => (
-                <WProgressStageContainer>
+                <WProgressStageContainer  key={item}>
                     <ProgressStage key={item} />
-                    {item === 1 && <WText >{concluedText}</WText>}
+                    {item === 1 && <WText  key={item} >{concluedText}</WText>}
                 </WProgressStageContainer>
             ))}
         </WStageContainer>

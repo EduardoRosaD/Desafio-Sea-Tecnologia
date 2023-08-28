@@ -1,6 +1,7 @@
 import { w } from "windstitch";
 import { EmployeeRegContext } from "../../context/employeeRegContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 export default function Footer() {
     const { setConcluedText, concluedText } = useContext(EmployeeRegContext)
@@ -10,11 +11,11 @@ export default function Footer() {
             <WSpan>A estapa está concluida?</WSpan>
             {concluedText === 'CONCLUIDO' ?
                 <>
-                    <WButton onClick={() => setConcluedText('')}>Sim <img src="images/blueBall.svg"></img> </WButton>
+                    <WButton onClick={() => setConcluedText('')}>Sim <Image src="images/blueBall.svg" width={16} height={16}></Image> </WButton>
                    
                 </>
                 :
-                <WButton onClick={() => setConcluedText('CONCLUIDO')}><img src="images/blueBall.svg"></img>  Não </WButton>
+                <WButton onClick={() => setConcluedText('CONCLUIDO')}><Image src="images/blueBall.svg" width={16} height={16}></Image>  Não </WButton>
             }
         </WFooter>
     )

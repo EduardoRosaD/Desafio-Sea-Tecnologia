@@ -5,36 +5,9 @@ import { getEmployees } from "./actions";
 
 import ProgressBar from "./progressBar";
 import MainContent from "./content";
+import { employeesList } from "./utils/employeeList";
 
-const employeesList = [{
-    name: 'João',
-    active: false,
-    cpf: '193.456.789-10',
-    role: 'Desenvolvedor',
-    job: 'Desenvolvimento',
-},
-{
-    name: 'Maria',
-    active: true,
-    cpf: '129.456.789-10',
-    role: 'Desenvolvedor',
-    job: 'Desenvolvimento',
-},
-{
-    name: 'José',
-    active: true,
-    cpf: '128.456.789-10',
-    role: 'Desenvolvedor',
-    job: 'Desenvolvimento',
-},
-{
-    name: 'João',
-    active: false,
-    cpf: '126.456.789-10',
-    role: 'Desenvolvedor',
-    job: 'Desenvolvimento',
-}
-]
+
 
 export default function EmployeeRegistration(props) {
     const [concluedText, setConcluedText] = useState('CONCLUIDO')
@@ -51,7 +24,7 @@ export default function EmployeeRegistration(props) {
             name: '',
             CA: '',  
         }],
-        active: false,
+        active: true,
         rg: '',
         birthDate: '',
         gender: '',

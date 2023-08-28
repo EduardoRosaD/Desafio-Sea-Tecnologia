@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5433:5432
+    env_file:
+      - backend-sea-tecnologia/.env
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+
+  node:
+    container_name: node
+    build: ./backend-sea-tecnologia
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres
+    env_file:
+      - backend-sea-tecnologia/.env
+
+  next-app:
+    container_name: next-app
+    build: ./frontend-sea-tecnologia
+    ports:
+      - 3000:3000
+    env_file:
+      - frontend-sea-tecnologia/.env
+  
+
+  nginx:
+    container_name: nginx_app
+    build: ./nginx
+    ports:
+      - 8080:80
+
+    depends_on:
+      - postgres
+      - node
+      - next-app
+ 
+
+volumes:
+  postgres-volume:

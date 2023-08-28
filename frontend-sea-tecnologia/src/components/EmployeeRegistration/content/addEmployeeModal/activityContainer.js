@@ -1,6 +1,7 @@
 import { w } from "windstitch";
 import { EmployeeRegContext } from "../../context/employeeRegContext";
 import { useContext } from "react";
+import Image from "next/image";
 
 export default function ActivyContainer(){
     const { setEmployeeForm, employeeForm } = useContext(EmployeeRegContext)
@@ -14,11 +15,11 @@ export default function ActivyContainer(){
             <WText>O trabalhador está ativo ou inativo? </WText>
             {employeeForm.active?
                 <>
-                    <WButton onClick={(e) => handleActivity(e)}>Ativo <img src="images/blueBall.svg"></img> </WButton>
+                    <WButton onClick={(e) => handleActivity(e)}>Ativo <img src="images/blueBall.svg" alt="blueBall" ></img> </WButton>
                    
                 </>
                 :
-                <WButton onClick={(e) => handleActivity(e)}><img src="images/blueBall.svg"></img>  Inativo </WButton>
+                <WButton onClick={(e) => handleActivity(e)}><img src="images/blueBall.svg" alt="blueBall"></img>  Inativo </WButton>
             }
         </WActivyContainer>
     )

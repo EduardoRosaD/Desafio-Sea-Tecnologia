@@ -7,6 +7,7 @@ import RoleContainer from "./roleContainer";
 import MedicalCertContainer from "./medicalCertContainer";
 import JobContainer from "./jobContainer";
 import { employeeRegister, getEmployees } from "../../actions";
+import Image from "next/image";
 
 export default function AddEmployeeModal() {
     const { setAddEmployee, employeeForm } = useContext(EmployeeRegContext)
@@ -16,7 +17,7 @@ export default function AddEmployeeModal() {
 
             <WHeaderContainer>
             <WButton onClick={() => setAddEmployee(false)}>
-                <img src="/icons/arrowLeft.svg" alt="close" />
+                <Image src="/icons/arrowLeft.svg" alt="close" width={27} height={23} />
             </WButton>
            <WHeader>Adicionar Funcionário</WHeader>
             </WHeaderContainer>

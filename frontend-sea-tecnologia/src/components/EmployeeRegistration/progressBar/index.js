@@ -1,12 +1,13 @@
 import { w } from "windstitch"
 import StageContainer from "./stageContainer"
+import Image from "next/image"
 
 export default function ProgressBar(props) {
     return (
         <WProgressBar>
 
         <WImageContainer>
-        <img src="images/progressBar.svg" alt="logo"
+        <Image src="images/progressBar.svg" alt="logo" width={1248} height={40}
          />
          </WImageContainer>
 

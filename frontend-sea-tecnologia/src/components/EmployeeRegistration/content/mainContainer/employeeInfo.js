@@ -1,4 +1,5 @@
 import { w } from "windstitch";
+import Image from "next/image";
 
 export default function EmployeeInfo({employee}){
     return (
@@ -8,7 +9,7 @@ export default function EmployeeInfo({employee}){
             <WSpan>{employee.role}</WSpan>
             <WSpan>{employee.job}</WSpan>
             <WButton>
-              <img src="images/treeDots.svg" alt="logo" />
+              <Image src="images/treeDots.svg" alt="logo" width={15.5} height={4} />
             </WButton>
         </WEmployeeInfo>
     )

@@ -1,7 +1,7 @@
 import { w } from "windstitch";
 import { EmployeeRegContext } from "../../../context/employeeRegContext"
 import { useContext } from "react";
-import { useState } from "react";
+import Image from "next/image";
 
 
 
@@ -16,9 +16,9 @@ export default function CheckBox(props){
     return(
         <WCheckBox>
             {props.checked === props.name ?
-            <img src="/icons/checkedBox.svg" alt="checked" onClick={(e) => handleGender(e)}/>
+            <Image src="/icons/checkedBox.svg" alt="checked" width={13} height={13} onClick={(e) => handleGender(e)}/>
             :
-            <img src="/icons/uncheckedBox.svg" alt="unchecked" onClick={(e) => handleGender(e)}/>   
+            <Image src="/icons/uncheckedBox.svg" alt="unchecked" width={13} height={13} onClick={(e) => handleGender(e)}/>   
         }
             <Wlabel>{props.name}</Wlabel>
         </WCheckBox>
